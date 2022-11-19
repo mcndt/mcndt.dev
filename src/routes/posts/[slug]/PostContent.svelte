@@ -16,7 +16,7 @@
 			{date}
 		</h3>
 	</header>
-
+	space-y-8 sm:space-y-12
 	<div
 		id="content"
 		class="
