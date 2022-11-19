@@ -5,13 +5,15 @@
 </script>
 
 <div class="v-full layout-container h-full bg-white dark:bg-[#0a0a0a]">
-	<Nav>
-		<a href="/blog" class="hover:underline">Blog</a>
-		<a href="/projects" class="hover:underline">Projects</a>
-		<a href="/about" class="hover:underline">About</a>
-		<a href="/resume" class="hover:underline">Resume</a>
-		<a href="/archive" class="hover:underline">Archive</a>
-	</Nav>
+	<div class="sticky top-0 z-50">
+		<Nav>
+			<a href="/blog" class="hover:underline">Blog</a>
+			<a href="/projects" class="hover:underline">Projects</a>
+			<a href="/about" class="hover:underline">About</a>
+			<a href="/resume" class="hover:underline">Resume</a>
+			<a href="/archive" class="hover:underline">Archive</a>
+		</Nav>
+	</div>
 	<DottedBg>
 		<slot />
 	</DottedBg>

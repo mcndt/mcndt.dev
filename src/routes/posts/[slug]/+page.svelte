@@ -10,10 +10,18 @@
 	const { content, ...contentProps } = data;
 </script>
 
-<div class="bg-white pt-10 dark:bg-stone-900">
+<div
+	class="border-b-[3px] border-black bg-white
+pt-10 drop-shadow-[0px_8px_0px_rgba(157,150,137,0.5)] dark:border-cream-700 dark:bg-stone-900
+dark:drop-shadow-[0px_8px_0px_rgba(157,150,137,0.2)]"
+>
 	<PageContent>
 		<PostContent {...contentProps} date={dateString}>
 			<svelte:component this={content} />
 		</PostContent>
 	</PageContent>
+</div>
+
+<div>
+	<p>ABOUT ME</p>
 </div>
