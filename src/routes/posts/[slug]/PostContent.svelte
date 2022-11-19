@@ -6,7 +6,10 @@
 
 <article class=" mx-auto max-w-[720px] font-body dark:text-cream-400">
 	<header class="mb-6 md:mb-8">
-		<h2 class="mb-3 font-header text-4xl font-bold text-black dark:text-cream-700 md:text-5xl">
+		<h2
+			class="mb-3 font-header text-4xl font-extrabold
+      text-black dark:text-cream-700 md:text-5xl"
+		>
 			{title}
 		</h2>
 		<h3 class="text-sm text-stone-500">

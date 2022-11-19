@@ -15,7 +15,7 @@ group-active:drop-shadow-sharp-active dark:border-cream-300 dark:bg-neutral-900
 dark:text-cream-700 dark:drop-shadow-sharp-dark dark:group-hover:drop-shadow-sharp-dark-hover
  dark:group-active:drop-shadow-sharp-dark-active"
 >
-	<h3 class="font-header text-2xl font-bold">{title}</h3>
+	<h3 class="font-header text-2xl font-extrabold">{title}</h3>
 	<p class="pr-8 font-body text-sm leading-6 text-stone-800 line-clamp-3 dark:text-cream-500">
 		{summary}
 	</p>
