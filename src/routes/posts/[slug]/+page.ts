@@ -18,13 +18,13 @@ export const load: PageLoad = async ({ params }) => {
 	}
 
 	const post = await import(match[0]);
-	// const post = await import(`../${params.slug}.md`);
-	const { title, date } = post.metadata;
+	const { title, date, tags } = post.metadata;
 	const content = post.default;
 
 	return {
 		content,
 		title,
-		date
+		date,
+		tags
 	};
 };

@@ -1,18 +1,19 @@
 <script lang="ts">
+	import PageContent from '$lib/components/ui/PageContent.svelte';
 	import type { PageData } from './$types';
+	import PostContent from './PostContent.svelte';
 
 	export let data: PageData;
+
+	const dateString = new Date(data.date).toLocaleDateString('en-US', { dateStyle: 'long' });
+
+	const { content, ...contentProps } = data;
 </script>
 
-<article class="prose prose-stone mx-auto font-body dark:prose-invert dark:text-cream-400">
-	<div class="not-prose">
-		<h1 class="mb-2 font-header text-4xl font-black text-black dark:text-cream-700">
-			{data.title}
-		</h1>
-		<p class="text-sm text-cream-200">
-			{new Date(data.date).toLocaleDateString('en-US', { dateStyle: 'long' })}
-		</p>
-	</div>
-
-	<svelte:component this={data.content} />
-</article>
+<div class="bg-white pt-10 dark:bg-stone-900">
+	<PageContent>
+		<PostContent {...contentProps} date={dateString}>
+			<svelte:component this={content} />
+		</PostContent>
+	</PageContent>
+</div>

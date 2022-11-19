@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Card from '$lib/components/Card.svelte';
+	import Card from '$lib/components/timeline/TimelineItem.svelte';
 	import type { PostMetadata } from '$lib/types/PostMetadata';
 	import _ from 'lodash';
 
@@ -18,7 +18,8 @@
 		}))
 		.value();
 
-	// TODO: this can probably be refactored to a zero-JS solution using CSS grid or smth?
+	// TODO: this can probably be refactored to a zero-JS solution using CSS grid or smth
+	// OR using Tailwind even: and odd: selectors
 	$: postsLeft = transformedPosts.filter((_, i) => i % 2 === 0);
 	$: postsRight = transformedPosts.filter((_, i) => i % 2 === 1);
 </script>
