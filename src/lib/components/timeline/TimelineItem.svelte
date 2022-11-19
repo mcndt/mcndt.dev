@@ -10,7 +10,10 @@
 	export let href: string;
 
 	const hOffset = 34;
-	const hPos = tickLocation === 'left' ? '-left-[42px]' : '-right-[42px]';
+	const hPos =
+		tickLocation === 'left'
+			? 'right-[calc(100%_+_24px)]'
+			: 'right-[calc(100%_+_24px)] lg:-right-[40px]';
 </script>
 
 <div id="card-container" class="relative">
