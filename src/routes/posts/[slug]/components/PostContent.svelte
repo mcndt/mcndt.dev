@@ -26,7 +26,7 @@
 
 	<footer
 		class="prose-sm border-2 border-black bg-white px-8 pt-6 pb-6 font-body
-				drop-shadow-sharp dark:border-cream-300 dark:bg-neutral-900 dark:prose-invert"
+				shadow-sharp dark:border-cream-300 dark:bg-neutral-900 dark:prose-invert"
 	>
 		<h2 class="font-header text-3xl font-bold">About me</h2>
 		<AboutMeContent footer />

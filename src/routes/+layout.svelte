@@ -14,9 +14,11 @@
 			<a href="/archive" class="hover:underline">Archive</a>
 		</Nav>
 	</div>
-	<DottedBg>
-		<slot />
-	</DottedBg>
+	<div class="h-full">
+		<DottedBg>
+			<slot />
+		</DottedBg>
+	</div>
 </div>
 
 <svelte:head>

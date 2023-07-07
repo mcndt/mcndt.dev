@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Dotted from '../styling/DottedBg.svelte';
+	import DottedBg from '../styling/DottedBg.svelte';
 
 	export let bg: 'dotted' | 'solid' = 'solid';
 	let cls = '';
@@ -9,9 +9,9 @@
 
 <div class="{cls} mx-auto max-w-6xl p-6 md:p-8">
 	{#if bg === 'dotted'}
-		<Dotted>
+		<DottedBg>
 			<slot />
-		</Dotted>
+		</DottedBg>
 	{:else}
 		<slot />
 	{/if}

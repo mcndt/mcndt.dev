@@ -30,13 +30,14 @@ module.exports = {
 				['sharp-dark']: '8px 6px 0px rgba(157,150,137,0.2)',
 				['sharp-dark-hover']: '10px 10px 0px rgba(157,150,137,0.2)',
 				['sharp-dark-active']: '3px 2px 0px rgba(157,150,137,0.2)'
-				// ['sharp-down-dark']: 'drop-shadow(0px 8px 0px rgba(157, 150, 137, 0.15)'
-				// ['sharp']: '10px 8px 0px rgba(0, 0, 0, 0.66)',
-				// ['sharp-hover']: '12px 14px 0px rgba(0, 0, 0, 0.50)',
-				// ['sharp-active']: '6px 4px 0px rgba(0, 0, 0, 0.8)'
-				// ['sharp']: '10px 8px 0px rgba(132, 129, 113, 0.8)',
-				// ['sharp-hover']: '12px 14px 0px rgba(132, 129, 113, 0.6)',
-				// ['sharp-active']: '6px 4px 0px rgba(132, 129, 113, 0.9)'
+			},
+			boxShadow: {
+				['sharp']: 'black 8px 6px 0px',
+				['sharp-hover']: 'rgb(64,64,64) 10px 10px 0px',
+				['sharp-active']: 'black 3px 2px 0px',
+				['sharp-dark']: 'rgba(157,150,137,0.2) 8px 6px 0px',
+				['sharp-dark-hover']: 'rgba(157,150,137,0.2) 10px 10px 0px',
+				['sharp-dark-active']: 'rgba(157,150,137,0.2) 3px 2px 0px'
 			},
 			typography: (theme) => ({
 				DEFAULT: {

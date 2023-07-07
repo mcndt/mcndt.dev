@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --yellow-accent: oklch(88.1% 0.192 91.6);
+  --blue-accent: oklch(41.2% 0.191 291.48);
+}
