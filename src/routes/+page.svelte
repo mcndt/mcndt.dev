@@ -1,5 +1,5 @@
 <script lang="ts">
-	import AboutMe from '$lib/components/AboutMe.svelte';
+	import AboutMe from './components/AboutMe.svelte';
 	import Card from '$lib/components/timeline/TimelineItem.svelte';
 	import Timeline from '$lib/components/timeline/Timeline.svelte';
 	import type { PostMetadata } from '$lib/types/PostMetadata';
@@ -13,9 +13,7 @@
 </script>
 
 <PageContent>
-	<div class="relative mx-auto mb-16 mt-16 max-w-[720px]">
-		<AboutMe />
-	</div>
+	<AboutMe />
 
 	<div class="mb-8 flex gap-x-1">
 		<button
