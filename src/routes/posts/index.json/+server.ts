@@ -1,33 +1,25 @@
 import type { PostMetadata } from '$lib/types/PostMetadata';
 import { slugFromPath } from '$lib/util';
-import { error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
-export const GET: RequestHandler = async ({ url }) => {
-	const modules = import.meta.glob('/content/posts/**/*.{md,svx,svelte.md}');
+export const prerender = true;
 
-	const postPromises = [];
-	const limit = Number(url.searchParams.get('limit') ?? Infinity);
+type Post = {
+	metadata: Omit<PostMetadata, 'slug'>;
+};
 
-	if (Number.isNaN(limit)) {
-		throw error(400, 'limit must be a number');
-	}
+export const GET: RequestHandler = async () => {
+	const allPostFiles: Record<string, Post> = import.meta.glob(
+		'/content/posts/**/*.{md,svx,svelte.md}',
+		{ eager: true }
+	);
 
-	for (const [path, resolver] of Object.entries(modules)) {
-		const slug = slugFromPath(path);
-		const promise = resolver().then(
-			(post: any) =>
-				({
-					slug,
-					...post.metadata
-				} as PostMetadata)
-		);
+	const posts: PostMetadata[] = Object.entries(allPostFiles).map(([path, post]) => ({
+		slug: slugFromPath(path),
+		...post.metadata
+	}));
 
-		postPromises.push(promise);
-	}
-
-	const posts = await Promise.all(postPromises);
-	const publishedPosts = posts.filter((post) => !post.draft).slice(0, limit);
+	const publishedPosts = posts.filter((post) => !post.draft);
 	publishedPosts.sort((a, b) => (new Date(a.date) > new Date(b.date) ? -1 : 1));
 
 	return new Response(JSON.stringify(publishedPosts), {

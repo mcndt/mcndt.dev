@@ -6,6 +6,8 @@
 	import { afterNavigate } from '$app/navigation';
 	import Card from '$lib/components/styling/Card.svelte';
 
+	export const prerender = true;
+
 	let containerRef: HTMLDivElement;
 
 	afterNavigate(() => {
@@ -16,11 +18,11 @@
 <div class="flex h-screen w-full flex-col bg-white dark:bg-[#0a0a0a]">
 	<div class="top-0 z-50">
 		<Nav>
-			<a href="/blog" class="hover:underline">Blog</a>
-			<a href="/projects" class="hover:underline">Projects</a>
-			<a href="/about" class="hover:underline">About</a>
-			<a href="/resume" class="hover:underline">Resume</a>
-			<a href="/archive" class="hover:underline">Archive</a>
+			<a href="/" class="hover:underline">Blog</a>
+			<a href="/" class="hover:underline">Projects</a>
+			<a href="/" class="hover:underline">About</a>
+			<a href="/" class="hover:underline">Resume</a>
+			<a href="/" class="hover:underline">Archive</a>
 		</Nav>
 	</div>
 	<div bind:this={containerRef} class="h-full grow overflow-y-auto">

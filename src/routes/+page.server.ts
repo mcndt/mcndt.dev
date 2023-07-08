@@ -1,8 +1,10 @@
 import type { PostMetadata } from '$lib/types/PostMetadata';
 import { error } from '@sveltejs/kit';
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 
-export const load: PageLoad = async ({ fetch }) => {
+export const prerender = true;
+
+export const load: PageServerLoad = async ({ fetch }) => {
 	const res = await fetch('/posts/index.json');
 
 	if (res.ok) {

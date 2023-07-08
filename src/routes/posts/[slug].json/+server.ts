@@ -2,6 +2,8 @@ import { slugFromPath } from '$lib/util';
 import { error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 
+export const prerender = true;
+
 export const GET: RequestHandler = async ({ params }) => {
 	const modules = import.meta.glob('/content/posts/**/*.{md,svx,svelte.md}');
 
@@ -20,8 +22,7 @@ export const GET: RequestHandler = async ({ params }) => {
 	const post = await import(match[0]);
 
 	const response = {
-		metadata: post.metadata,
-		content: post.default
+		metadata: post.metadata
 	};
 
 	return new Response(JSON.stringify(response));

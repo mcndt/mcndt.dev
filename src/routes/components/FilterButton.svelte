@@ -11,11 +11,6 @@
 		align-middle font-header text-xl leading-5 px-3 pb-1 hover:underline whitespace-nowrap
 		transition-colors duration-200 ease-in-out
 		`;
-
-	// define the on:click handler
-	function handleClick() {
-		console.log(`Clicked ${text}`);
-	}
 </script>
 
 <button on:click class="filter-button {commonClass} {selected ? selectedClass : unselectedClass}"

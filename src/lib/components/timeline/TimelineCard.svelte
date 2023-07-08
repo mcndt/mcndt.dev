@@ -1,11 +1,9 @@
 <script lang="ts">
 	import Card from '../styling/Card.svelte';
-	import TimelineTags from './TimelineTags.svelte';
 
 	export let title: string;
 	export let date: string;
 	export let summary: string;
-	export let tags: string[];
 </script>
 
 <Card

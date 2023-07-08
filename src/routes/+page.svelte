@@ -29,8 +29,6 @@
 
 	$: filteredPosts =
 		selectedTag === 'All' ? posts : posts.filter((post) => post.tags.includes(selectedTag));
-
-	$: console.debug(filteredPosts);
 </script>
 
 <PageContent>
