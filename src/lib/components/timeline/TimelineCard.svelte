@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Card from '../styling/Card.svelte';
 	import TimelineTags from './TimelineTags.svelte';
 
 	export let title: string;
@@ -7,14 +8,10 @@
 	export let tags: string[];
 </script>
 
-<div
-	id="card"
-	class="block cursor-pointer space-y-4 border-2 border-black bg-white py-4 px-6 
-	shadow-sharp 
+<Card
+	class=" cursor-pointer space-y-4  
 	transition group-hover:shadow-sharp-hover 
-	group-active:shadow-sharp-active dark:border-cream-300 dark:bg-neutral-900 
-	dark:text-cream-700 
-	dark:shadow-sharp-dark 
+	group-active:shadow-sharp-active 
 	dark:group-hover:shadow-sharp-dark-hover
  	dark:group-active:shadow-sharp-dark-active"
 >
@@ -26,4 +23,4 @@
 		<span class="group-hover:underline">Read more -></span>
 		<span>{date}</span>
 	</div>
-</div>
+</Card>

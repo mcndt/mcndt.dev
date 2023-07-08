@@ -21,6 +21,7 @@
 		const postTags = _(posts)
 			.flatMap((post) => post.tags)
 			.uniq()
+			.sort()
 			.value();
 
 		tags = ['All', ...postTags];

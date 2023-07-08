@@ -4,6 +4,7 @@
 	import '../app.css';
 
 	import { afterNavigate } from '$app/navigation';
+	import Card from '$lib/components/styling/Card.svelte';
 
 	let containerRef: HTMLDivElement;
 
@@ -22,9 +23,18 @@
 			<a href="/archive" class="hover:underline">Archive</a>
 		</Nav>
 	</div>
-	<div bind:this={containerRef} class="v-full grow overflow-y-auto">
-		<DottedBg class="v-full">
+	<div bind:this={containerRef} class="h-full grow overflow-y-auto">
+		<DottedBg class="min-h-full">
 			<slot />
+			<footer class="mx-6 my-4 border-black bg-white shadow-sharp lg:mx-auto lg:max-w-lg">
+				<Card class="flex justify-center gap-2">
+					<span>
+						Built with love by <a class="underline" href="https://mcndt.dev">mcndt</a>
+					</span>
+					<span>-</span>
+					<a class="underline" href="https://www.buymeacoffee.com/mcndt">☕ Buy me a coffee</a>
+				</Card>
+			</footer>
 		</DottedBg>
 	</div>
 </div>

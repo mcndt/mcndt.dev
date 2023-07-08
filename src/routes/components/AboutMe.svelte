@@ -5,7 +5,7 @@
 	import AboutMeContent from '$lib/components/components/AboutMeContent.svelte';
 </script>
 
-<div class="relative mx-auto mb-16 mt-16 max-w-[720px]">
+<div class="relative mx-auto mb-20 mt-16 max-w-[720px]">
 	<div
 		class="absolute -left-4 -top-8 z-10 bg-[#1B1711] px-6 pt-4 pb-6 text-white
 	drop-shadow-[8px_6px_0px_var(--yellow-accent)] dark:text-cream-700 dark:drop-shadow-[8px_6px_0px_var(--yellow-accent)] md:-left-8 
