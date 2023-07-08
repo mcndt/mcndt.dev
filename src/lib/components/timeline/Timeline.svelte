@@ -5,7 +5,9 @@
 
 	export let posts: PostMetadata[] = [];
 
-	const transformedPosts = _(posts)
+	let transformedPosts: PostMetadata[] = [];
+
+	$: transformedPosts = _(posts)
 		.sortBy('date')
 		.reverse()
 		.map((post) => ({
@@ -45,7 +47,6 @@
 					summary={post.summary}
 					tags={post.tags}
 					href={`/posts/${post.slug}`}
-					tickIndex={i}
 				/>
 			</div>
 		{/each}

@@ -1,9 +1,7 @@
 <script lang="ts">
 	import TimelineCard from './TimelineCard.svelte';
-	import TimelineTags from './TimelineTags.svelte';
 
 	export let tickLocation: 'left' | 'right' = 'left';
-	export let tickIndex: number;
 	export let title: string;
 	export let date: string;
 	export let summary: string;

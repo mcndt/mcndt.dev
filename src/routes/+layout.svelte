@@ -1,11 +1,19 @@
-<script>
+<script lang="ts">
 	import DottedBg from '$lib/components/styling/DottedBg.svelte';
 	import Nav from '$lib/components/ui/Nav.svelte';
 	import '../app.css';
+
+	import { afterNavigate } from '$app/navigation';
+
+	let containerRef: HTMLDivElement;
+
+	afterNavigate(() => {
+		containerRef.scrollTo({ top: 0, behavior: 'instant' });
+	});
 </script>
 
-<div class="v-full layout-container h-full bg-white dark:bg-[#0a0a0a]">
-	<div class="sticky top-0 z-50">
+<div class="flex h-screen w-full flex-col bg-white dark:bg-[#0a0a0a]">
+	<div class="top-0 z-50">
 		<Nav>
 			<a href="/blog" class="hover:underline">Blog</a>
 			<a href="/projects" class="hover:underline">Projects</a>
@@ -14,8 +22,8 @@
 			<a href="/archive" class="hover:underline">Archive</a>
 		</Nav>
 	</div>
-	<div class="h-full">
-		<DottedBg>
+	<div bind:this={containerRef} class="v-full grow overflow-y-auto">
+		<DottedBg class="v-full">
 			<slot />
 		</DottedBg>
 	</div>

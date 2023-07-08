@@ -6,31 +6,40 @@
 	import type { PageData } from './$types';
 	import PageContent from '$lib/components/ui/PageContent.svelte';
 	import Dotted from '$lib/components/styling/DottedBg.svelte';
+	import _ from 'lodash';
+	import TagFilter from './components/TagFilter.svelte';
 
 	export let data: PageData;
 
 	let { posts } = data;
+
+	let tags: string[] = [];
+	let filteredPosts: PostMetadata[] = [];
+	let selectedTag: string | 'All' = 'All';
+
+	$: {
+		const postTags = _(posts)
+			.flatMap((post) => post.tags)
+			.uniq()
+			.value();
+
+		tags = ['All', ...postTags];
+	}
+
+	$: filteredPosts =
+		selectedTag === 'All' ? posts : posts.filter((post) => post.tags.includes(selectedTag));
+
+	$: console.debug(filteredPosts);
 </script>
 
 <PageContent>
 	<AboutMe />
 
-	<div class="mb-8 flex gap-x-1">
-		<button
-			class="box-border h-8 rounded-full border-[3px] border-black bg-white px-3 pb-1 
-			align-middle font-header text-xl leading-5 text-black hover:underline dark:border-cream-700 dark:bg-neutral-900 dark:text-cream-700"
-			>All</button
-		>
-		{#each ['Articles', 'Talks', 'Showcase'] as text}
-			<button
-				class="box-border h-8 rounded-full bg-black px-3 pb-1 align-middle 
-			font-header text-xl leading-5 text-white hover:underline dark:bg-cream-700 dark:text-black"
-				>{text}</button
-			>
-		{/each}
-	</div>
+	<TagFilter {tags} bind:selectedTag />
 
 	<div class="pb-12">
-		<Timeline {posts} />
+		{#if filteredPosts.length > 0}
+			<Timeline posts={filteredPosts} />
+		{/if}
 	</div>
 </PageContent>

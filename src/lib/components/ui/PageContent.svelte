@@ -7,7 +7,7 @@
 	export { cls as class };
 </script>
 
-<div class="{cls} mx-auto max-w-6xl p-6 md:p-8">
+<div class="{cls} v-full mx-auto max-w-6xl p-6 md:p-8">
 	{#if bg === 'dotted'}
 		<DottedBg>
 			<slot />
