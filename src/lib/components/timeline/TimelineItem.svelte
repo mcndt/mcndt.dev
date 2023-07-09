@@ -52,6 +52,7 @@
 			border-radius: 0.25rem;
 			padding: 0rem 0.5rem 0.25rem;
 			background-color: #ff271a;
+			background-color: oklch(66% 0.265 29.452191641287275);
 		}
 	}
 </style>
