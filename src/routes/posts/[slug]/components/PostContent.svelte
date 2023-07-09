@@ -5,6 +5,8 @@
 	export let title: string;
 	export let date: string;
 	export let tags: string[];
+
+	console.debug(tags);
 </script>
 
 <article class=" mx-auto max-w-[720px] font-body dark:text-cream-400">
@@ -31,15 +33,4 @@
 		<h2 class="font-header text-3xl font-bold">About me</h2>
 		<AboutMeContent footer />
 	</footer>
-
-	<!-- <footer class="prose border-2 border-black p-4 dark:border-cream-300 dark:prose-invert">
-		<h2>About me</h2>
-		<p>
-			I'm a computer science engineer with interest in a wide range of topics, including
-			productivity, PKM, artificial intelligence, product development and game design.
-			<br /><br />
-			On my blog, you will find posts about personal projects, workflow and productivity, and reviews.
-			Find out more about me <a style="box-shadow: 0 1px" href="/about">here</a>.
-		</p>
-	</footer> -->
 </article>
