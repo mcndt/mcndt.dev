@@ -14,7 +14,7 @@
 	</p>
 	<p class="mb-6 pr-36">
 		On my blog, you will find posts about personal projects, workflow and productivity, and reviews.
-		Find out more about me <a href="/">here</a>.
+		Find out more about me <a href="/about">here</a>.
 	</p>
 	<div class="not-prose flex gap-x-4">
 		<a href="https://github.com/mcndt" target="_blank" rel="noreferrer">

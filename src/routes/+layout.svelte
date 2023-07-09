@@ -22,9 +22,9 @@
 	<div class="top-0 z-50">
 		<Nav>
 			<a href="/" class="hover:underline">Blog</a>
-			<a href="/" class="hover:underline">Projects</a>
-			<a href="/" class="hover:underline">About</a>
-			<a href="/" class="hover:underline">Resume</a>
+			<a href="/projects" class="hover:underline">Projects</a>
+			<a href="/about" class="hover:underline">About</a>
+			<a href="/resume.pdf" class="hover:underline">Resume</a>
 			<a href="/" class="hover:underline">Archive</a>
 		</Nav>
 	</div>

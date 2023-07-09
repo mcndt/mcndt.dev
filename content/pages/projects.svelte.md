@@ -1,5 +1,5 @@
 ---
-url: "/projects/"
+url: 'projects'
 hidemeta: true
 hideAboutAuthor: true
 comments: false
@@ -32,17 +32,17 @@ Noteshare.space is a service for sharing end-to-end encrypted Markdown notes fro
 
 Since then, I have operated Noteshare.space publicly as a way to give back to the Obsidian community.
 
-You can read more about how I designed this software on [this blog post](/posts/how-to-e2e-encryption/). 
+You can read more about how I designed this software on [this blog post](/posts/how-to-e2e-encryption/).
 
 ![preview](/media/noteshare/preview-frame.png)
 
 Features include:
+
 - No account or API keys required
 - AES-256-CBC encryption
 - Free hosting on Noteshare.space (fair use rate limiting applies)
 - Self-host your encrypted notes for full control (noteshare is 100% open-source)
 - Most markdown is supported (currently no image or note embeddings)
-
 
 ## [Toggl Track for Obsidian](https://github.com/mcndt/obsidian-toggl-integration) (2021-today)
 
@@ -54,7 +54,7 @@ Features include:
   </a>
 </div>
 
-[GitHub](https://github.com/mcndt/obsidian-toggl-integration) 
+[GitHub](https://github.com/mcndt/obsidian-toggl-integration)
 
 As an avid user of both the Obsidian notes app and the Toggl time tracking service, I develop and maintain an open-source plugin integration Toggl into Obsidian, downloaded by over 6,500 users to date.
 
@@ -66,7 +66,7 @@ Click [here](obsidian://show-plugin?id=obsidian-toggl-integration) to open the p
 
 ## [blockcolors.app](https://blockcolors.app) (2021, inactive)
 
-I started [blockcolors.app](https://blockcolors.app) as a creative outlet during my thesis year in university. The app lets users discover new combinations of building blocks in Minecraft, save their favorite palettes, and share palettes with friends using share links. 
+I started [blockcolors.app](https://blockcolors.app) as a creative outlet during my thesis year in university. The app lets users discover new combinations of building blocks in Minecraft, save their favorite palettes, and share palettes with friends using share links.
 
 The representative colors of each Minecraft texture were extracted in Python using the PIL and skimages libraries and an algorithm I wrote based on the [median cut algorithm](https://en.wikipedia.org/wiki/Median_cut) used in the GIF image standard.
 

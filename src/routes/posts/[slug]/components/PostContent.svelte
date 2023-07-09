@@ -1,5 +1,6 @@
 <script lang="ts">
 	import AboutMeContent from '$lib/components/components/AboutMeContent.svelte';
+	import Article from '$lib/components/styling/Article.svelte';
 	import Card from '$lib/components/styling/Card.svelte';
 	import Prose from '$lib/components/styling/Prose.svelte';
 	import Tag from '$lib/components/styling/Tag.svelte';
@@ -11,7 +12,7 @@
 	console.debug(tags);
 </script>
 
-<article class=" mx-auto max-w-[720px] font-body dark:text-cream-400">
+<Article>
 	<header class="mb-6 md:mb-8">
 		<h2
 			class="mb-3 font-header text-4xl font-extrabold
@@ -43,4 +44,4 @@
 			<AboutMeContent footer />
 		</footer>
 	</Card>
-</article>
+</Article>

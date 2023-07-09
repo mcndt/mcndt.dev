@@ -1,5 +1,5 @@
 ---
-url: "/about/"
+url: 'about'
 hidemeta: true
 hideAboutAuthor: true
 comments: false
@@ -7,7 +7,7 @@ comments: false
 
 # About me
 
-Hello there! I'm a computer science engineer with interest in a wide range of  topics, including productivity, PKM, artificial intelligence, product development and game design.
+Hello there! I'm a computer science engineer with interest in a wide range of topics, including productivity, PKM, artificial intelligence, product development and game design.
 
 I graduated from [Ghent University](http://www.ugent.be) in 2022 with a M.Sc. in Computer Science Engineering and Artificial Intelligence. For my Master dissertation, I researched the application of [Physical Reservoir Computing](https://doi.org/10.35848/1347-4065/ab8d4f) on physiological processes in plants.
 
