@@ -1,9 +1,9 @@
 ---
 title: '"HACK WEEK" 💻'
-date: "2022-11-11"
+date: '2023-07-07'
 draft: false
 summary: 'I have been struggling to make time for personal programming projects since I started my first full-time job in September. This isn''t necessarily a bad thing; it is important to find a new rhythm and work-life balance. Now that I''m two months in, I want to reintroduce some focus on programming outside of work. That''s how I came up with "HACK WEEK"!'
-tags: ["Noteshare.space", "Productivity"]
+tags: ['Noteshare.space', 'Productivity']
 ---
 
 I have struggled to make time for personal programming projects since I started my first full-time job in September. This isn't necessarily a bad thing; graduating from university and starting a full-time job is a big life event, and it is important to find a new rhythm and work-life balance. And now, after two months, I want to reintroduce some focus on programming outside of work. That's how I came up with **"HACK WEEK"**!

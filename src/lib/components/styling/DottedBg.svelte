@@ -11,16 +11,10 @@
 </div>
 
 <style lang="scss" global>
-	.dark {
-		.layout-container {
-			--dot-grid-color: #78716c;
-			--dot-grid-bg-color: #0a0a0a;
-		}
-	}
 	.layout-container {
 		--dot-grid-color: #a5a3a3;
 		--dot-grid-bg-color: #ffffff;
-		--dot-grid-size: 24px;
+		--dot-grid-size: 22px;
 
 		background-size: var(--dot-grid-size) var(--dot-grid-size);
 		background-image: radial-gradient(
@@ -28,5 +22,12 @@
 			var(--dot-grid-color) 1px,
 			var(--dot-grid-bg-color) 0
 		);
+	}
+
+	.dark {
+		.layout-container {
+			--dot-grid-color: #78716c;
+			--dot-grid-bg-color: #0a0a0a;
+		}
 	}
 </style>

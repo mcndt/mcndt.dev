@@ -7,7 +7,7 @@
 </script>
 
 <Card
-	class=" cursor-pointer space-y-4  
+	class="cursor-pointer space-y-4  
 	transition group-hover:shadow-sharp-hover 
 	group-active:shadow-sharp-active 
 	dark:group-hover:shadow-sharp-dark-hover

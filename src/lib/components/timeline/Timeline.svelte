@@ -5,14 +5,15 @@
 
 	export let posts: PostMetadata[] = [];
 
-	let transformedPosts: PostMetadata[] = [];
+	let transformedPosts: (PostMetadata & { isNew: boolean })[] = [];
 
 	$: transformedPosts = _(posts)
 		.sortBy('date')
 		.reverse()
 		.map((post) => ({
 			...post,
-			date: new Date(post.date).toLocaleDateString('en-US', { dateStyle: 'long' })
+			date: new Date(post.date).toLocaleDateString('en-US', { dateStyle: 'long' }),
+			isNew: Date.now() - new Date(post.date).getTime() < 1000 * 60 * 60 * 24 * 14 // 14 days
 		}))
 		.value();
 </script>
@@ -45,8 +46,8 @@
 					title={post.title}
 					date={post.date}
 					summary={post.summary}
-					tags={post.tags}
 					href={`/posts/${post.slug}`}
+					isNew={post.isNew}
 				/>
 			</div>
 		{/each}

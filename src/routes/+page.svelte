@@ -33,7 +33,6 @@
 
 <PageContent>
 	<AboutMe />
-
 	<TagFilter {tags} bind:selectedTag />
 
 	<div class="pb-12">

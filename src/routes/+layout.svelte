@@ -28,6 +28,7 @@
 	<div bind:this={containerRef} class="h-full grow overflow-y-auto">
 		<DottedBg class="min-h-full">
 			<slot />
+
 			<footer class="mx-6 my-4 border-black bg-white shadow-sharp lg:mx-auto lg:max-w-lg">
 				<Card class="flex justify-center gap-2">
 					<span>
