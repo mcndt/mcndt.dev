@@ -10,7 +10,10 @@
 
 	let containerRef: HTMLDivElement;
 
-	afterNavigate(() => {
+	afterNavigate((nav) => {
+		if (nav.from?.route.id === nav.to?.route.id) {
+			return;
+		}
 		containerRef.scrollTo({ top: 0, behavior: 'instant' });
 	});
 </script>
