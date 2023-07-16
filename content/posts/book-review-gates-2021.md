@@ -33,7 +33,16 @@ According to Gates, there are two important numbers to remember about climate ch
 
 I think this chart from the book best describes the situation we are in and why getting to net zero (or even net negative) emissions is non-negotionable:
 
-<!-- {{<figure width=600 align=center src="/media/gates2021-three-lines.png" title="Impact of carbon emission reduction on global warming" caption="" attr="Copyright © 2021 by Bill Gates">}} -->
+<script context="module">
+	import Figure from "$lib/components/components/Figure.svelte"
+</script>
+
+<Figure 
+	attr="Copyright © 2021 by Bill Gates"
+	src="/media/posts/gates2021-three-lines.png" 
+	title="Impact of carbon emission reduction on global warming"
+	width="720"
+/>
 
 To keep the planet livable for humans, we must combine **mitigation** (avoiding further warming by eliminating greenhouse gas emissions) and **adapatation** (minimize negative impact of changes that are already occuring). This book is primarily about mitigation techniques, although there is a chapter about adaptation as well.
 

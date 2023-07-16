@@ -8,6 +8,10 @@ summary: 'How can you share data securely via the web browser, using a third-par
 tags: ['Noteshare.space', 'Information Security']
 ---
 
+<script context="module">
+	import Figure from "$lib/components/components/Figure.svelte"
+</script>
+
 I have used [Obsidian](https://obsidian.md/) for my personal knowledge management (PKM) for over a year now. I love it thanks to its simplicity (everything is stored on disk as plain Markdown files) and the way it promotes connecting my knowledge through links.
 
 However, that last part is also a big pain point for me. There is no trivial way for me to share my knowledge, apart from sending the plain Markdown file; my knowledge base turns into its own walled garden. For example, I take most of my study notes in Obsidian, which works great for me, but is annoying for my classmates when I have to send them plain `.md` files of my notes.
@@ -39,7 +43,12 @@ As we will see, it is quite straightforward to meet all of these. Now, let's loo
 
 The architecture consists of four components: (i) an Obsidian plugin for encrypting the notes, (ii) a note storage service, (iii) a web application for rendering the web viewer, and (iv) the web browser for opening the shared notes and decrypting them.
 
-<!-- {{<figure width=720 align=center src="/posts/media/noteshare-architecture.png" title="Software architecture for Noteshare.space" caption="" attrlink="" attr="Copyright © 2022 mcndt">}} -->
+<Figure 
+	attr="Copyright © 2022 mcndt"
+	src="/media/posts/noteshare-architecture.png" 
+	title="Software architecture for Noteshare.space"
+	width="720"
+/>
 
 The flow for storing and retrieving notes is as follows:
 
@@ -109,13 +118,23 @@ You might also want to adapt it so that only a symmetric key is encrypted with t
 
 How can we share the decryption key with the recipient when the storage service is not allowed to see it? For this, we can make clever use of the `#` symbol in URIs:
 
-<!-- {{<figure width=720 align=center src="/posts/media/noteshare-uri.png" title="Securely encoding decryption keys in URIs" caption="" attrlink="" attr="Copyright © 2022 mcndt">}} -->
+<Figure 
+	attr="Copyright © 2022 mcndt"
+	src="/media/posts/noteshare-uri.png" 
+	title="Securely encoding decryption keys in URIs"
+	width="720"
+/>
 
 The `["#" fragment]` syntax is most commonly used in web URLs to indicate to the browser to scroll to a specific section of the page (for example [`https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#Syntax`](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#Syntax)).
 What is unique about the fragment component of URIs is that web browsers never include it in their HTTP requests to the server.
 In other words, we can use it to add data to URLs that are accessible to the browser, but not the server. Perfect for our decryption key! The sketch below illustrates the steps the browser takes to render the decrypted note:
 
-<!-- {{<figure width=720 align=center src="/posts/media/noteshare-decryption.png" title="Retrieving ciphertext and decrypting in-browser" caption="" attrlink="" attr="Copyright © 2022 mcndt">}} -->
+<Figure 
+	attr="Copyright © 2022 mcndt"
+	src="/media/posts/noteshare-decryption.png" 
+	title="Retrieving ciphertext and decrypting in-browser"
+	width="720"
+/>
 
 We can access the URL fragment using the JavaScript [Location API](https://developer.mozilla.org/en-US/docs/Web/API/Location):
 

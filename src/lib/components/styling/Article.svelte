@@ -7,7 +7,7 @@
 </script>
 
 <article class="{cls} mx-auto max-w-[720px] font-body dark:text-cream-400">
-	<Prose class="mb-12">
+	<Prose>
 		<slot />
 	</Prose>
 </article>

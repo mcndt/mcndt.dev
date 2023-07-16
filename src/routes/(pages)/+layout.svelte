@@ -1,6 +1,5 @@
 <script lang="ts">
 	import PageContent from '$lib/components/ui/PageContent.svelte';
-	import type { LayoutData } from '../(standalone-pages)/$types';
 	import Article from '$lib/components/styling/Article.svelte';
 </script>
 

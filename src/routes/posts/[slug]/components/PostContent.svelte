@@ -15,8 +15,8 @@
 <Article>
 	<header class="mb-6 md:mb-8">
 		<h2
-			class="mb-3 font-header text-4xl font-extrabold
-      text-black dark:text-cream-700 md:text-5xl"
+			class="mb-3 mt-4 font-header text-4xl
+      font-extrabold text-black dark:text-cream-700 md:text-5xl"
 		>
 			{title}
 		</h2>
