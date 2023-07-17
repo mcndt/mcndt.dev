@@ -29,10 +29,10 @@
 		</Nav>
 	</div>
 	<div bind:this={containerRef} class="h-full grow overflow-y-auto">
-		<DottedBg class="min-h-full">
+		<DottedBg class="flex min-h-full flex-col justify-between">
 			<slot />
 
-			<footer class="mx-6 my-4 border-black bg-white shadow-sharp lg:mx-auto lg:max-w-lg">
+			<footer class="bottom-0 mx-6 my-4 border-black bg-white shadow-sharp lg:mx-auto lg:max-w-lg">
 				<Card class="flex justify-center gap-2">
 					<span>
 						Built with love by <a class="underline" href="https://mcndt.dev">mcndt</a>
