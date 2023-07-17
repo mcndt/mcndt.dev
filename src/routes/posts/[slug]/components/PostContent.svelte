@@ -4,6 +4,7 @@
 	import Card from '$lib/components/styling/Card.svelte';
 	import Prose from '$lib/components/styling/Prose.svelte';
 	import Tag from '$lib/components/styling/Tag.svelte';
+	import Comments from '$lib/components/ui/Comments.svelte';
 
 	export let title: string;
 	export let date: string;
@@ -44,4 +45,8 @@
 			<AboutMeContent footer />
 		</footer>
 	</Card>
+
+	<div class="mt-6">
+		<Comments />
+	</div>
 </Article>
