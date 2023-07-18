@@ -25,7 +25,7 @@
 			<a href="/projects" class="hover:underline">Projects</a>
 			<a href="/about" class="hover:underline">About</a>
 			<a href="/resume.pdf" class="hover:underline">Resume</a>
-			<a href="/" class="hover:underline">Archive</a>
+			<a href="/archive" class="hover:underline">Archive</a>
 		</Nav>
 	</div>
 	<div bind:this={containerRef} class="h-full grow overflow-y-auto">
