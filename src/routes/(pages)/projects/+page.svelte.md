@@ -9,9 +9,9 @@ comments: false
 
 Overview:
 
-- [📝 Noteshare.space / Obsidian Note Sharing (2022-today)](#notesharespacehttpsnotesharespace-2022-today)
-- [⏲ Toggl Track integration for Obsidian (2021-today)](#toggl-track-integration-for-obsidianhttpsgithubcommcndtobsidian-toggl-integration-2021-today)
-- [🎨 Blockcolors.app (2021, inactive)](#blockcolorsapphttpsblockcolorsapp-2021-inactive)
+- [📝 Noteshare.space / Obsidian Note Sharing (2022-today)](#notesharespace-2022-today)
+- [⏲ Toggl Track integration for Obsidian (2021-today)](#toggl-track-for-obsidian-2021-today)
+- [🎨 Blockcolors.app (2021, inactive)](#blockcolorsapp-2021-inactive)
 
 ## [Noteshare.space](https://noteshare.space) (2022-today)
 

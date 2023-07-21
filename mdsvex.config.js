@@ -1,7 +1,7 @@
 // import remarkGithub from 'remark-github';
 // import remarkAbbr from 'remark-abbr';
-// import rehypeSlug from 'rehype-slug';
-// import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import relativeImages from 'mdsvex-relative-images';
 
 export default {
@@ -21,12 +21,12 @@ export default {
 		// remarkAbbr
 	],
 	rehypePlugins: [
-		// rehypeSlug,
-		// [
-		// 	rehypeAutolinkHeadings,
-		// 	{
-		// 		behavior: 'wrap'
-		// 	}
-		// ]
+		rehypeSlug,
+		[
+			rehypeAutolinkHeadings,
+			{
+				behavior: 'wrap'
+			}
+		]
 	]
 };
