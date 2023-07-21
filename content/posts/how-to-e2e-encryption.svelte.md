@@ -125,7 +125,7 @@ How can we share the decryption key with the recipient when the storage service 
 	width="720"
 />
 
-The `["#" fragment]` syntax is most commonly used in web URLs to indicate to the browser to scroll to a specific section of the page (for example [`https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#Syntax`](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#Syntax)).
+The `["#" fragment]` syntax is most commonly used in web URLs to indicate to the browser to scroll to a specific section of the page (for example: [`https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#Syntax`](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier#Syntax)).
 What is unique about the fragment component of URIs is that web browsers never include it in their HTTP requests to the server.
 In other words, we can use it to add data to URLs that are accessible to the browser, but not the server. Perfect for our decryption key! The sketch below illustrates the steps the browser takes to render the decrypted note:
 

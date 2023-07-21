@@ -61,6 +61,9 @@ module.exports = {
 							'box-shadow': '0 1px'
 						},
 						code: {
+							display: 'inline',
+							'word-wrap': 'break-word',
+							'white-space': 'normal',
 							'font-family': 'monospace',
 							'font-weight': '400',
 							'font-size': '1.1em',
