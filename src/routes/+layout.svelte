@@ -6,6 +6,7 @@
 	import Nav from '$lib/components/ui/Nav.svelte';
 	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
+	import { SITE_TITLE } from '$lib/siteConfig';
 
 	let containerRef: HTMLDivElement;
 
@@ -19,6 +20,13 @@
 
 <svelte:head>
 	<title>{$page.data.title ?? 'mcndt'} | Maxime Cannoodt</title>
+
+	<link
+		rel="alternate"
+		type="application/rss+xml"
+		title={'RSS Feed for ' + SITE_TITLE}
+		href="/rss.xml"
+	/>
 
 	<script>
 		if (
