@@ -1,4 +1,6 @@
 <script lang="ts">
+	import '../../../styles/prism-gruvbox-dark.css';
+
 	let cls = '';
 
 	export let noStyling: boolean = false;
