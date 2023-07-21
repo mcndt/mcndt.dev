@@ -2,7 +2,10 @@
 	import { page } from '$app/stores';
 </script>
 
-<div id="container" class="flex w-full flex-col items-center overflow-clip py-12 px-6 2xl:py-24">
+<div
+	id="container"
+	class="flex w-full flex-col items-center overflow-clip px-6 py-12 dark:text-cream-700 2xl:py-24"
+>
 	<div>
 		<div
 			id="error-code"
