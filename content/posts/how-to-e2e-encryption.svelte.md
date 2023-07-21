@@ -159,7 +159,7 @@ And that's all there is to it!
 ## Conclusion
 
 In this article, I established the groundwork for building an end-to-end encrypted data storage service.
-It is on this foundation that I built my own encrypted note-sharing service. I initially created it for personal use, but have since opened access to the entire Obsidian community. You can find more information about the service and installation instructions for the Obsidian plugin on [Noteshare.space](noteshare.space).
+It is on this foundation that I built my own encrypted note-sharing service. I initially created it for personal use, but have since opened access to the entire Obsidian community. You can find more information about the service and installation instructions for the Obsidian plugin on [Noteshare.space](https://noteshare.space).
 
 Note that this is far from everything you need to host a web service! You must protect your service from abuse in volume of data (rate/volume limiting) and volume of requests (DOS protection).
 Furthermore, you might want to implement a mechanism to block known bad actors from your system.

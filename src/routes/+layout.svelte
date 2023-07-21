@@ -1,17 +1,13 @@
 <script lang="ts">
-	import DottedBg from '$lib/components/styling/DottedBg.svelte';
-	import Nav from '$lib/components/ui/Nav.svelte';
 	import '../app.css';
-
-	import { afterNavigate } from '$app/navigation';
 	import Card from '$lib/components/styling/Card.svelte';
+	import DottedBg from '$lib/components/styling/DottedBg.svelte';
 	import Footer from './components/Footer.svelte';
-
-	export const prerender = true;
+	import Nav from '$lib/components/ui/Nav.svelte';
+	import { afterNavigate } from '$app/navigation';
+	import { page } from '$app/stores';
 
 	let containerRef: HTMLDivElement;
-
-	import { page } from '$app/stores';
 
 	afterNavigate((nav) => {
 		if (nav.from?.route.id === nav.to?.route.id) {

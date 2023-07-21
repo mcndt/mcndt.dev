@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 import preprocess from 'svelte-preprocess';
 
 import md from 'mdsvex';
@@ -15,7 +15,10 @@ const config = {
 		md.mdsvex(mdsvexConfig)
 	],
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		prerender: {
+			handleMissingId: 'ignore'
+		}
 	},
 	extensions: ['.svelte', ...mdsvexConfig.extensions]
 };

@@ -9,8 +9,6 @@
 	export let title: string;
 	export let date: string;
 	export let tags: string[];
-
-	console.debug(tags);
 </script>
 
 <Article>
@@ -36,7 +34,7 @@
 		{/each}
 	</div>
 
-	<Card class="px-8 pt-6 pb-6">
+	<Card class="px-8 pb-6 pt-6">
 		<footer
 			class="prose-sm font-body
 		dark:prose-invert"

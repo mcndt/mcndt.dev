@@ -12,7 +12,5 @@ export const load: PageServerLoad = async ({ fetch }) => {
 		return { posts };
 	}
 
-	console.debug(res.status, res.statusText);
-
 	throw error(res.status, res.statusText);
 };

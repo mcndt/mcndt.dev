@@ -16,14 +16,14 @@ Overview:
 ## [Noteshare.space](https://noteshare.space) (2022-today)
 
 <div style="display: flex">
-  <img src="https://img.shields.io/github/v/tag/mcndt/obsidian-note-sharing">
-  <img style="margin-left: 0.5em" src="https://img.shields.io/github/downloads/mcndt/obsidian-note-sharing/total">
+  <img src="https://img.shields.io/github/v/tag/mcndt/obsidian-note-sharing" alt="obsidian-note-sharing-repo-tag">
+  <img style="margin-left: 0.5em" src="https://img.shields.io/github/downloads/mcndt/obsidian-note-sharing/total" alt="obsidian-note-sharing-downloads-count">
   <a href="https://github.com/mcndt/obsidian-note-sharing/stargazers" style="box-shadow: 0 0">
-    <img style="margin-left: .5em" src="https://img.shields.io/github/stars/mcndt/obsidian-note-sharing.svg?style=social&label=Star&maxAge=2592000">
+    <img style="margin-left: .5em" src="https://img.shields.io/github/stars/mcndt/obsidian-note-sharing.svg?style=social&label=Star&maxAge=2592000" alt="obsidian-note-sharing-stars-count">
   </a>
   <span style="display: block; margin: 0.8em 0.5em 0 0.5em"><strong>(Plugin)</strong></span>
   <a href="https://github.com/mcndt/noteshare.space/stargazers" style="box-shadow: 0 0">
-    <img style="margin-left: 0" src="https://img.shields.io/github/stars/mcndt/noteshare.space.svg?style=social&label=Star&maxAge=2592000">
+    <img style="margin-left: 0" src="https://img.shields.io/github/stars/mcndt/noteshare.space.svg?style=social&label=Star&maxAge=2592000" alt="Noteshare.space GitHub stars count">
   </a>
   <span style="display: block; margin: 0.8em 0 0 .5em"><strong>(Webapp)</strong></span>
 </div>
@@ -47,10 +47,10 @@ Features include:
 ## [Toggl Track for Obsidian](https://github.com/mcndt/obsidian-toggl-integration) (2021-today)
 
 <div style="display: flex">
-  <img src="https://img.shields.io/github/v/tag/mcndt/obsidian-toggl-integration">
-  <img style="margin-left: 0.5em" src="https://img.shields.io/github/downloads/mcndt/obsidian-toggl-integration/total">
+  <img src="https://img.shields.io/github/v/tag/mcndt/obsidian-toggl-integration" alt="Obsidian Toggl integration GitHub repo badge">
+  <img style="margin-left: 0.5em" src="https://img.shields.io/github/downloads/mcndt/obsidian-toggl-integration/total" alt="Obsidian integration total downloads count">
   <a href="https://github.com/mcndt/obsidian-toggl-integration/stargazers" style="box-shadow: 0 0">
-    <img style="margin-left: .5em" src="https://img.shields.io/github/stars/mcndt/obsidian-toggl-integration.svg?style=social&label=Star&maxAge=2592000">
+    <img style="margin-left: .5em" src="https://img.shields.io/github/stars/mcndt/obsidian-toggl-integration.svg?style=social&label=Star&maxAge=2592000" alt="Obsidian toggle integration total stars">
   </a>
 </div>
 
