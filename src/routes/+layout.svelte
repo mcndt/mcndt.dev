@@ -50,7 +50,7 @@
 			<a href="/archive" class="hover:underline">Archive</a>
 		</Nav>
 	</div>
-	<div bind:this={containerRef} class="h-full grow sm:overflow-y-auto">
+	<div bind:this={containerRef} class="mt-2 h-full grow sm:mt-0 sm:overflow-y-auto">
 		<DottedBg class="flex min-h-full flex-col justify-between">
 			<slot />
 			<Footer
