@@ -12,7 +12,7 @@
 >
 	<div
 		class="mx-auto my-2 flex w-full max-w-6xl 
-			flex-wrap items-center justify-between gap-y-1.5 gap-x-4 px-8"
+			flex-wrap items-center justify-between gap-x-4 gap-y-1.5 px-8"
 	>
 		<div id="nav-left" class="flex space-x-3">
 			<a href="/" class="font-header text-4xl hover:underline">mcndt</a>
@@ -20,7 +20,7 @@
 				<ThemeToggle />
 			</span>
 		</div>
-		<div id="nav-right" class="flex space-x-4 font-header text-2xl">
+		<div id="nav-right" class="flex flex-wrap gap-x-4 font-header text-2xl">
 			<slot />
 		</div>
 	</div>

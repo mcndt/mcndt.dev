@@ -40,8 +40,8 @@
 	</script>
 </svelte:head>
 
-<div class="flex h-screen w-full flex-col bg-white dark:bg-[#0a0a0a]">
-	<div class="top-0 z-50">
+<div class="h-screen w-full bg-white dark:bg-[#0a0a0a] sm:flex sm:flex-col">
+	<div class="z-50">
 		<Nav>
 			<a href="/" class="hover:underline">Blog</a>
 			<a href="/projects" class="hover:underline">Projects</a>
@@ -50,7 +50,7 @@
 			<a href="/archive" class="hover:underline">Archive</a>
 		</Nav>
 	</div>
-	<div bind:this={containerRef} class="h-full grow overflow-y-auto">
+	<div bind:this={containerRef} class="h-full grow sm:overflow-y-auto">
 		<DottedBg class="flex min-h-full flex-col justify-between">
 			<slot />
 			<Footer

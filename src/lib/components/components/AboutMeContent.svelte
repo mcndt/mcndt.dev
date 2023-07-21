@@ -8,11 +8,11 @@
 </script>
 
 <Prose>
-	<p class="mb-6 pr-20">
+	<p class="mb-6 {footer ? 'pr-0' : 'pr-12'} sm:pr-20">
 		I’m a computer science engineer with interest in a wide range of topics, including productivity,
 		PKM, artificial intelligence, product development and game design.
 	</p>
-	<p class="mb-6 pr-36">
+	<p class="{footer ? 'mb-6' : 'mb-12'} sm:mb-12 {footer ? 'pr-0' : 'pr-12'} sm:mb-6 sm:pr-36">
 		On my blog, you will find posts about personal projects, workflow and productivity, and reviews.
 		Find out more about me <a href="/about">here</a>.
 	</p>

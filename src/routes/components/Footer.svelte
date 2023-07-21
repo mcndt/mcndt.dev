@@ -7,7 +7,7 @@
 </script>
 
 <footer class={cls}>
-	<Card class="flex justify-center gap-2">
+	<Card class="flex flex-wrap justify-center gap-2">
 		<span>
 			Built with love by <a class="underline" href="/">mcndt</a>
 		</span>

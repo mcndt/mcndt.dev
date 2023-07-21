@@ -34,7 +34,7 @@
 		{/each}
 	</div>
 
-	<Card class="px-8 pb-6 pt-6">
+	<Card class="sm:px-8 sm:py-6">
 		<footer
 			class="prose-sm font-body
 		dark:prose-invert"
