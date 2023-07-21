@@ -22,6 +22,7 @@ export const load: PageLoad = async ({ params }) => {
 	}
 
 	return {
+		title: post.metadata.title,
 		component: post.default,
 		frontmatter: post.metadata as unknown as PostMetadata
 	};

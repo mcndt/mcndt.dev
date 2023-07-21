@@ -1,5 +1,7 @@
+import type { ComponentType, SvelteComponentTyped } from 'svelte';
+
 interface MdsvexFile {
-	default: import('svelte/internal').SvelteComponent;
+	default: ComponentType<SvelteComponentTyped>;
 	metadata: Record<string, string>;
 }
 

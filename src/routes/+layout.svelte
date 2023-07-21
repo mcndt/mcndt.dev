@@ -5,10 +5,13 @@
 
 	import { afterNavigate } from '$app/navigation';
 	import Card from '$lib/components/styling/Card.svelte';
+	import Footer from './components/Footer.svelte';
 
 	export const prerender = true;
 
 	let containerRef: HTMLDivElement;
+
+	import { page } from '$app/stores';
 
 	afterNavigate((nav) => {
 		if (nav.from?.route.id === nav.to?.route.id) {
@@ -17,6 +20,21 @@
 		containerRef.scrollTo({ top: 0, behavior: 'instant' });
 	});
 </script>
+
+<svelte:head>
+	<title>{$page.data.title ?? 'mcndt'} | Maxime Cannoodt</title>
+
+	<script>
+		if (
+			localStorage.getItem('theme') === 'dark' ||
+			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+		) {
+			document.documentElement.classList.add('dark');
+		} else {
+			document.documentElement.classList.remove('dark');
+		}
+	</script>
+</svelte:head>
 
 <div class="flex h-screen w-full flex-col bg-white dark:bg-[#0a0a0a]">
 	<div class="top-0 z-50">
@@ -31,29 +49,9 @@
 	<div bind:this={containerRef} class="h-full grow overflow-y-auto">
 		<DottedBg class="flex min-h-full flex-col justify-between">
 			<slot />
-
-			<footer class="bottom-0 mx-6 my-4 border-black bg-white shadow-sharp lg:mx-auto lg:max-w-lg">
-				<Card class="flex justify-center gap-2">
-					<span>
-						Built with love by <a class="underline" href="https://mcndt.dev">mcndt</a>
-					</span>
-					<span>-</span>
-					<a class="underline" href="https://www.buymeacoffee.com/mcndt">☕ Buy me a coffee</a>
-				</Card>
-			</footer>
+			<Footer
+				class="bottom-0 mx-6 my-4 border-black bg-white shadow-sharp lg:mx-auto lg:max-w-lg"
+			/>
 		</DottedBg>
 	</div>
 </div>
-
-<svelte:head>
-	<script>
-		if (
-			localStorage.getItem('theme') === 'dark' ||
-			(!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-		) {
-			document.documentElement.classList.add('dark');
-		} else {
-			document.documentElement.classList.remove('dark');
-		}
-	</script>
-</svelte:head>

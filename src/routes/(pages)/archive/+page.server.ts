@@ -9,7 +9,7 @@ export const load: PageServerLoad = async ({ fetch }) => {
 
 	if (res.ok) {
 		const posts = (await res.json()) as PostMetadata[];
-		return { posts };
+		return { posts, title: 'Archive' };
 	}
 
 	console.debug(res.status, res.statusText);
