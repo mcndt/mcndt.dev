@@ -1,9 +1,9 @@
 ---
-title: "Book review: First Person Singular (H. Murakami, 2021)"
-date: "2023-07-07"
+title: 'Book review: First Person Singular (H. Murakami, 2021)'
+date: '2023-07-07'
 draft: false
-summary: "Trying to collect some thoughts about a book I read recently."
-tags: ["Book Review"]
+summary: 'Trying to collect some thoughts about a book I read recently.'
+tags: ['Book Review']
 ---
 
 Author: [Haruki Murakami](https://en.wikipedia.org/wiki/Haruki_Murakami)<br>
