@@ -1,5 +1,7 @@
 # mcndt.dev
 
+[![statichost.eu status](https://builder.statichost.eu/mcndt.dev/status.svg)](https://builder.statichost.eu/mcndt.dev/)
+
 Personal blog and website at [mcndt.dev](https://www.mcndt.dev/).
 
 Built with SvelteKit, Tailwind CSS, and mdsvex for markdown content rendering.
