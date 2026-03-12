@@ -1,38 +1,36 @@
-# create-svelte
+# mcndt.dev
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Personal blog and website at [mcndt.dev](https://www.mcndt.dev/).
 
-## Creating a project
+Built with SvelteKit, Tailwind CSS, and mdsvex for markdown content rendering.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Development
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Install dependencies and start the dev server:
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+pnpm install
+pnpm dev
 ```
 
 ## Building
 
-To create a production version of your app:
+Create a production build:
 
 ```bash
-npm run build
+pnpm build
 ```
 
-You can preview the production build with `npm run preview`.
+Preview the production build locally:
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```bash
+pnpm preview
+```
+
+## Hosting
+
+The site is statically generated using `@sveltejs/adapter-static` and hosted on [statichost.eu](https://www.statichost.eu/), an EU-sovereign hosting provider based in Sweden.
+
+Deployment is automated: pushing to `main` triggers a build and deploy via a GitHub webhook. The build configuration is defined in `statichost.yml`.
+
+DNS is managed through Cloudflare, pointing `mcndt.dev` and `www.mcndt.dev` to statichost. SSL certificates are auto-provisioned.
