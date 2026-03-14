@@ -21,7 +21,7 @@
 		{/if}
 
 		{#if caption}
-			<div id="figure-caption" class="text-sm text-stone-500">{caption}</div>
+			<div id="figure-caption" class="py-3 text-sm text-stone-500">{caption}</div>
 		{/if}
 
 		{#if attr}
@@ -37,6 +37,12 @@
 </div>
 
 <style global lang="scss">
+	#figure-content {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
 	#figure-title {
 		&:before {
 			content: 'Figure ' counter(figure-number) ': ';
