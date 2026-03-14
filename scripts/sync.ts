@@ -291,7 +291,7 @@ function convertImageEmbeds(
     const outFilename = replaceExtWithWebp(embed.filename);
     imageFiles.push(embed.filename);
 
-    const props: string[] = [`src="./media/${slug}/${outFilename}"`];
+    const props: string[] = [`src="/media/posts/${slug}/${outFilename}"`];
     if (embed.altText) {
       if (/^\d+$/.test(embed.altText)) {
         props.push(`width="${embed.altText}"`);
@@ -530,8 +530,7 @@ async function main() {
       }
 
       const outFilename = replaceExtWithWebp(imgFilename);
-      const mediaDir = join(note.outputDir, 'media', slug);
-      const mediaRelPath = join(mediaDir, outFilename);
+      const mediaRelPath = join('static/media/posts', slug, outFilename);
       const mediaAbsPath = join(ROOT, mediaRelPath);
 
       // Hash-based caching
