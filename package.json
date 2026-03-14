@@ -9,7 +9,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
+		"format": "prettier --plugin-search-dir . --write .",
+		"sync": "tsx scripts/sync.ts"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "1.0.0-next.48",
@@ -32,12 +33,14 @@
 		"rehype-slug": "^5.1.0",
 		"rss": "^1.2.2",
 		"sass": "^1.56.1",
+		"sharp": "^0.34.5",
 		"svelte": "^3.59.2",
 		"svelte-check": "^2.9.2",
 		"svelte-icons": "^2.1.0",
 		"svelte-preprocess": "^4.10.7",
 		"tailwindcss": "^3.3.3",
 		"tslib": "^2.4.1",
+		"tsx": "^4.21.0",
 		"typescript": "^4.8.4",
 		"vite": "^4.4.2"
 	},

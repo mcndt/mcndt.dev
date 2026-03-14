@@ -6,3 +6,7 @@ node_modules
 .env
 .env.*
 !.env.example
+/plans
+.sync.config.json
+.sync-lock.json
+.sync-image-cache.json
