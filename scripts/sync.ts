@@ -14,6 +14,7 @@ const __dirname = dirname(__filename);
 interface SyncConfig {
   vaultPath: string;
   mappings: { tag: string; output: string }[];
+  ignore?: string[];
 }
 
 interface SyncLock {
@@ -161,14 +162,22 @@ function parseSimpleYaml(yaml: string): ObsidianFrontmatter {
  * Scan the vault for notes matching any configured tag prefix.
  * Returns most-specific tag match (longest prefix).
  */
+/** Check if a vault file path matches any ignore pattern (path prefix or exact file) */
+function isIgnored(filePath: string, vaultPath: string, ignoreList: string[]): boolean {
+  const rel = filePath.slice(vaultPath.length).replace(/^\//, '');
+  return ignoreList.some((pattern) => rel === pattern || rel.startsWith(pattern + '/') || rel.startsWith(pattern));
+}
+
 function scanVault(config: SyncConfig): DiscoveredNote[] {
   const allMdFiles = walkDir(config.vaultPath);
   const notes: DiscoveredNote[] = [];
+  const ignoreList = config.ignore || [];
 
   // Sort mappings by tag length descending (most-specific first)
   const sortedMappings = [...config.mappings].sort((a, b) => b.tag.length - a.tag.length);
 
   for (const filePath of allMdFiles) {
+    if (ignoreList.length > 0 && isIgnored(filePath, config.vaultPath, ignoreList)) continue;
     const fm = parseFrontmatter(filePath);
     if (!fm || !fm.tags || !Array.isArray(fm.tags)) continue;
 
