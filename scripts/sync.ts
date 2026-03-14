@@ -472,7 +472,7 @@ async function main() {
     if (!note.frontmatter.published) continue;
 
     const slug = note.frontmatter.slug;
-    const outputFilename = `${slug}.svelte.md`;
+    const outputFilename = `${slug}.md`;
     const outputRelPath = join(note.outputDir, outputFilename);
     const outputAbsPath = join(ROOT, outputRelPath);
 
