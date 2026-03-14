@@ -1,5 +1,5 @@
-import { readFileSync, writeFileSync, existsSync, readdirSync, statSync, mkdirSync, unlinkSync, rmSync } from 'fs';
-import { join, relative, extname, basename, dirname } from 'path';
+import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync, unlinkSync, rmSync } from 'fs';
+import { join, extname, basename, dirname } from 'path';
 import { createHash } from 'crypto';
 import { fileURLToPath } from 'url';
 import sharp from 'sharp';
@@ -23,7 +23,7 @@ interface SyncLock {
 interface ObsidianFrontmatter {
   slug: string;
   date: string;
-  draft: boolean;
+  published: boolean;
   summary: string;
   tags: string[];
   'blog tags': string[];
@@ -210,7 +210,8 @@ function extractH1(body: string): { title: string; bodyWithoutH1: string } {
   if (!match) return { title: '', bodyWithoutH1: body };
 
   const title = match[1].trim();
-  const bodyWithoutH1 = body.slice(0, match.index) + body.slice(match.index! + match[0].length);
+  const idx = match.index ?? 0;
+  const bodyWithoutH1 = body.slice(0, idx) + body.slice(idx + match[0].length);
   return { title, bodyWithoutH1 };
 }
 
@@ -282,7 +283,13 @@ function convertImageEmbeds(
     imageFiles.push(embed.filename);
 
     const props: string[] = [`src="./media/${slug}/${outFilename}"`];
-    if (embed.altText) props.push(`title="${escapeAttr(embed.altText)}"`);
+    if (embed.altText) {
+      if (/^\d+$/.test(embed.altText)) {
+        props.push(`width="${embed.altText}"`);
+      } else {
+        props.push(`title="${escapeAttr(embed.altText)}"`);
+      }
+    }
     if (embed.caption) props.push(`caption="${escapeAttr(embed.caption)}"`);
 
     const figureTag = `<Figure ${props.join(' ')} />`;
@@ -331,7 +338,7 @@ function buildBlogFrontmatter(fm: ObsidianFrontmatter, title: string): string {
     `title: ${yamlString(title)}`,
     `slug: ${yamlString(fm.slug)}`,
     `date: ${yamlString(String(fm.date))}`,
-    `draft: ${fm.draft}`,
+    `draft: ${!fm.published}`,
     `summary: ${yamlString(fm.summary || '')}`,
     `tags: [${blogTags.map((t) => yamlString(t)).join(', ')}]`,
     '---',
@@ -340,7 +347,7 @@ function buildBlogFrontmatter(fm: ObsidianFrontmatter, title: string): string {
 }
 
 function yamlString(s: string): string {
-  if (/[:#\[\]{}&*!|>'"%@`]/.test(s) || s.includes("'") || s === '' || s === 'true' || s === 'false') {
+  if (/[:#[\]{}&*!|>'"%@`]/.test(s) || s.includes("'") || s === '' || s === 'true' || s === 'false') {
     return `'${s.replace(/'/g, "''")}'`;
   }
   return s;
@@ -357,7 +364,7 @@ function addFigureImport(hasImages: boolean): string {
 // ---------------------------------------------------------------------------
 
 function fileHash(filePath: string): string {
-  const data = readFileSync(filePath);
+  const data = readFileSync(filePath) as unknown as Uint8Array;
   return createHash('sha256').update(data).digest('hex').slice(0, 16);
 }
 
@@ -390,7 +397,7 @@ async function optimizeImage(
 
   if (ext === '.svg') {
     // SVG: just copy as-is
-    writeFileSync(outputPath, readFileSync(sourcePath));
+    writeFileSync(outputPath, readFileSync(sourcePath) as unknown as Uint8Array);
     return;
   }
 
@@ -442,7 +449,7 @@ async function main() {
   // Build lookup: note name (lowercase) → slug for published notes (for wikilink resolution)
   const publishedSlugs = new Map<string, string>();
   for (const note of notes) {
-    if (!note.frontmatter.draft) {
+    if (note.frontmatter.published) {
       const noteName = basename(note.filePath, '.md');
       publishedSlugs.set(noteName.toLowerCase(), note.frontmatter.slug);
     }
@@ -453,7 +460,7 @@ async function main() {
 
   // Process published notes
   for (const note of notes) {
-    if (note.frontmatter.draft) continue;
+    if (!note.frontmatter.published) continue;
 
     const slug = note.frontmatter.slug;
     const outputFilename = `${slug}.svelte.md`;
