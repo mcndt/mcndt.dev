@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync, unlinkSync, rmSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync, unlinkSync, rmSync, watch } from 'fs';
 import { join, extname, basename, dirname } from 'path';
 import { createHash } from 'crypto';
 import { fileURLToPath } from 'url';
@@ -45,6 +45,8 @@ interface SyncSummary {
   imagesAdded: string[];
   imagesRemoved: string[];
 }
+
+const WATCHED_EXTENSIONS = new Set(['.md', '.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg', '.bmp']);
 
 // ---------------------------------------------------------------------------
 // Config & lock
@@ -446,7 +448,8 @@ function saveImageHashCache(cache: ImageHashCache): void {
 // Main sync
 // ---------------------------------------------------------------------------
 
-async function main() {
+async function runSync() {
+  const startTime = performance.now();
   const config = loadConfig();
   const lock = loadLock();
   const imageCache = loadImageHashCache();
@@ -587,6 +590,9 @@ async function main() {
 
   // Print summary
   printSummary(summary);
+
+  const elapsed = ((performance.now() - startTime) / 1000).toFixed(2);
+  console.log(`✓ Synced in ${elapsed}s`);
 }
 
 function printSummary(summary: SyncSummary) {
@@ -626,6 +632,68 @@ function printSummary(summary: SyncSummary) {
   }
 
   console.log('\nPush to deploy these changes.');
+}
+
+async function main() {
+  const watchMode = process.argv.includes('--watch');
+
+  // Initial sync
+  await runSync();
+
+  if (!watchMode) return;
+
+  // Watch mode
+  const config = loadConfig();
+  const vaultPath = config.vaultPath;
+
+  console.log(`\nWatching vault for changes: ${vaultPath}`);
+  console.log('Press Ctrl+C to stop.\n');
+
+  let debounceTimer: ReturnType<typeof setTimeout> | null = null;
+  let syncing = false;
+  let pendingSync = false;
+
+  const triggerSync = () => {
+    if (debounceTimer) clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(async () => {
+      if (syncing) {
+        pendingSync = true;
+        return;
+      }
+      syncing = true;
+      console.log('\n' + '='.repeat(60));
+      console.log(`Change detected. Re-syncing at ${new Date().toLocaleTimeString()}...`);
+      console.log('='.repeat(60) + '\n');
+      try {
+        await runSync();
+      } catch (err) {
+        console.error('Sync error:', err);
+      }
+      syncing = false;
+      if (pendingSync) {
+        pendingSync = false;
+        triggerSync();
+      }
+    }, 2000);
+  };
+
+  const watcher = watch(vaultPath, { recursive: true }, (_event, filename) => {
+    if (!filename) return;
+    const ext = extname(filename).toLowerCase();
+    if (!WATCHED_EXTENSIONS.has(ext)) return;
+    triggerSync();
+  });
+
+  // Graceful shutdown
+  const cleanup = () => {
+    console.log('\nStopping watcher...');
+    if (debounceTimer) clearTimeout(debounceTimer);
+    watcher.close();
+    process.exit(0);
+  };
+
+  process.on('SIGINT', cleanup);
+  process.on('SIGTERM', cleanup);
 }
 
 main().catch((err) => {
