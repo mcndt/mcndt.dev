@@ -347,11 +347,13 @@ function resolveWikilinks(body: string, publishedSlugs: Map<string, string>): st
 /** Build blog-compatible frontmatter */
 function buildBlogFrontmatter(fm: ObsidianFrontmatter, title: string): string {
   const blogTags = fm['blog tags'] || [];
+  // Use 'published date' as the public date, falling back to 'date'
+  const publishedDate = fm['published date'] ? String(fm['published date']) : String(fm.date);
   const lines = [
     '---',
     `title: ${yamlString(title)}`,
     `slug: ${yamlString(fm.slug)}`,
-    `date: ${yamlString(String(fm.date))}`,
+    `date: ${yamlString(publishedDate)}`,
     `draft: ${!fm.published}`,
     `summary: ${yamlString(fm.summary || '')}`,
     `tags: [${blogTags.map((t) => yamlString(t)).join(', ')}]`,
