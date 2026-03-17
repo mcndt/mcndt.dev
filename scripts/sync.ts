@@ -299,7 +299,7 @@ function convertImageEmbeds(
         props.push(`title="${escapeAttr(embed.altText)}"`);
       }
     }
-    if (embed.caption) props.push(`caption="${escapeAttr(embed.caption)}"`);
+    if (embed.caption) props.push(`caption="${escapeAttr(markdownLinksToHtml(embed.caption))}"`);
 
     const figureTag = `<Figure ${props.join(' ')} />`;
     result = result.replace(embed.fullMatch, figureTag);
@@ -316,6 +316,11 @@ function replaceExtWithWebp(filename: string): string {
 
 function escapeAttr(s: string): string {
   return s.replace(/"/g, '&quot;');
+}
+
+/** Convert markdown links [text](url) in a string to HTML <a> tags */
+function markdownLinksToHtml(s: string): string {
+  return s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
 }
 
 /**

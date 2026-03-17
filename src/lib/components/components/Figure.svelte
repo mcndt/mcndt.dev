@@ -21,7 +21,7 @@
 		{/if}
 
 		{#if caption}
-			<div id="figure-caption" class="py-3 text-sm text-stone-500">{caption}</div>
+			<div id="figure-caption" class="py-3 text-sm text-stone-500">{@html caption}</div>
 		{/if}
 
 		{#if attr}
