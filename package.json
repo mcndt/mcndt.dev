@@ -11,7 +11,7 @@
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
 		"sync": "tsx scripts/sync.ts",
-		"sync:watch": "tsx scripts/sync.ts --watch"
+		"sync:watch": "tsx scripts/sync.ts --watch & vite dev"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "1.0.0-next.48",

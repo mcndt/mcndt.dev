@@ -1,5 +1,5 @@
 ---
-title: 'Album of the day: Shabaka - Of The Earth (and on microblogging about music)'
+title: 'Album of the day #1: Shabaka - Of The Earth (and on microblogging about music)'
 slug: album-of-the-day-shabaka-of-the-earth
 date: 2026-03-17
 draft: false
