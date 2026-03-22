@@ -240,6 +240,11 @@ function stripObsidianBlocks(body: string): string {
   return body.replace(/```(?:meta-bind-button|meta-bind|dataview|dataviewjs)\n[\s\S]*?```/g, '');
 }
 
+/** Strip Obsidian comments: %%inline%% and multi-line %% ... %% blocks */
+function stripObsidianComments(body: string): string {
+  return body.replace(/%%[\s\S]*?%%/g, '');
+}
+
 interface ImageEmbed {
   fullMatch: string;
   filename: string;
@@ -497,7 +502,7 @@ async function runSync() {
     }
 
     // Transform body
-    let transformedBody = stripObsidianBlocks(bodyWithoutH1);
+    let transformedBody = stripObsidianComments(stripObsidianBlocks(bodyWithoutH1));
     const imageEmbeds = findImageEmbeds(transformedBody);
     const { body: bodyWithFigures, imageFiles } = convertImageEmbeds(
       transformedBody,
@@ -506,8 +511,8 @@ async function runSync() {
     );
     transformedBody = resolveWikilinks(bodyWithFigures, publishedSlugs);
 
-    // Trim leading/trailing whitespace
-    transformedBody = transformedBody.trim();
+    // Clean up whitespace: collapse 3+ consecutive newlines into 2, then trim
+    transformedBody = transformedBody.replace(/\n{3,}/g, '\n\n').trim();
 
     // Build output
     const frontmatter = buildBlogFrontmatter(note.frontmatter, title);
