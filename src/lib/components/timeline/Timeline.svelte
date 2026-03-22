@@ -13,7 +13,7 @@
 		.map((post) => ({
 			...post,
 			date: new Date(post.date).toLocaleDateString('en-US', { dateStyle: 'long' }),
-			isNew: Date.now() - new Date(post.date).getTime() < 1000 * 60 * 60 * 24 * 14 // 14 days
+			isNew: Date.now() - new Date(post.date).getTime() < 1000 * 60 * 60 * 24 * 5 // 5 days
 		}))
 		.value();
 </script>
