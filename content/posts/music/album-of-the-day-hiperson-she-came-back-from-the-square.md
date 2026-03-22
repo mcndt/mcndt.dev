@@ -1,6 +1,6 @@
 ---
 title: 'Album of the day #3 - Hiperson, Strawberries, and She Came Back From The Square'
-slug: album-of-the-day-2026-03-20-hiperson-she-came-back-from-the-square
+slug: album-of-the-day-hiperson-she-came-back-from-the-square
 date: 2026-03-22
 draft: false
 summary: Exploring Hiperson, a post-punk band from Chengdu, who introduced me to the indie rock scene from China.
@@ -39,4 +39,4 @@ Happy listening,
 
 Max
 
-<Figure src="/media/posts/album-of-the-day-2026-03-20-hiperson-she-came-back-from-the-square/aotd-she-came-back-from-the-square-cover-art.webp" width="350" caption="Hiperson - 她从广场回来 (She Came Back From the Square) (2018) cover art" />
+<Figure src="/media/posts/album-of-the-day-hiperson-she-came-back-from-the-square/aotd-she-came-back-from-the-square-cover-art.webp" width="350" caption="Hiperson - 她从广场回来 (She Came Back From the Square) (2018) cover art" />
