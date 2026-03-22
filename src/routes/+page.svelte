@@ -8,6 +8,8 @@
 	import Dotted from '$lib/components/styling/DottedBg.svelte';
 	import _ from 'lodash';
 	import TagFilter from './components/TagFilter.svelte';
+	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
 
 	export let data: PageData;
 
@@ -15,13 +17,16 @@
 
 	let tags: string[] = [];
 	let filteredPosts: PostMetadata[] = [];
-	let selectedTag: string | 'All' = 'All';
+
+	$: selectedTag = $page.url.searchParams.get('tag') || 'All';
 
 	$: {
 		const postTags = _(posts)
 			.flatMap((post) => post.tags)
-			.uniq()
-			.sort()
+			.countBy()
+			.entries()
+			.orderBy(([, count]) => count, 'desc')
+			.map(([tag]) => tag)
 			.value();
 
 		tags = ['All', ...postTags];
@@ -29,11 +34,21 @@
 
 	$: filteredPosts =
 		selectedTag === 'All' ? posts : posts.filter((post) => post.tags.includes(selectedTag));
+
+	function onSelectTag(tag: string) {
+		const url = new URL($page.url);
+		if (tag === 'All') {
+			url.searchParams.delete('tag');
+		} else {
+			url.searchParams.set('tag', tag);
+		}
+		goto(url, { replaceState: true, keepFocus: true, noScroll: true });
+	}
 </script>
 
 <PageContent>
 	<AboutMe />
-	<TagFilter {tags} bind:selectedTag />
+	<TagFilter {tags} {selectedTag} onSelect={onSelectTag} />
 
 	<div class="pb-12">
 		{#if filteredPosts.length > 0}

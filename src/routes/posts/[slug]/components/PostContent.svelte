@@ -30,7 +30,9 @@
 
 	<div class="gap-y-1.6 mb-3 flex flex-wrap gap-x-1">
 		{#each tags as tag}
-			<Tag>{tag}</Tag>
+			<a href="/?tag={encodeURIComponent(tag)}" class="!shadow-none">
+				<Tag clickable>{tag}</Tag>
+			</a>
 		{/each}
 	</div>
 
