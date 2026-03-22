@@ -5,4 +5,5 @@ export type PostMetadata = {
 	draft: boolean;
 	summary: string;
 	tags: string[];
+	ogImage?: string;
 };

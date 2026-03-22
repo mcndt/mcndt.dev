@@ -6,7 +6,7 @@
 	import Nav from '$lib/components/ui/Nav.svelte';
 	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
-	import { SITE_TITLE } from '$lib/siteConfig';
+	import { SITE_TITLE, SITE_URL } from '$lib/siteConfig';
 
 	let containerRef: HTMLDivElement;
 
@@ -20,6 +20,8 @@
 
 <svelte:head>
 	<title>{$page.data.title ?? 'mcndt'} | Maxime Cannoodt</title>
+	<meta property="og:site_name" content={SITE_TITLE} />
+	<meta property="og:locale" content="en_US" />
 
 	<link
 		rel="alternate"

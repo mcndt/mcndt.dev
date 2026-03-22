@@ -5,6 +5,7 @@ date: 2026-03-22
 draft: false
 summary: Exploring Hiperson, a post-punk band from Chengdu, who introduced me to the indie rock scene from China.
 tags: [Music]
+ogImage: /media/posts/album-of-the-day-hiperson-she-came-back-from-the-square/og-cover.webp
 ---
 <script context="module">
 	import Figure from "$lib/components/components/Figure.svelte"

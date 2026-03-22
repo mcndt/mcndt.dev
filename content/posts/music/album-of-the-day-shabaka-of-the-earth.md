@@ -5,6 +5,7 @@ date: 2026-03-17
 draft: false
 summary: 'On Shabaka Hutchings'' new record, a music bar in Kyoto, and why I''m writing again.'
 tags: [Music]
+ogImage: /media/posts/album-of-the-day-shabaka-of-the-earth/og-cover.webp
 ---
 <script context="module">
 	import Figure from "$lib/components/components/Figure.svelte"

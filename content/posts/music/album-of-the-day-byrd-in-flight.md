@@ -5,6 +5,7 @@ date: 2026-03-18
 draft: false
 summary: A fun, joyous jazz record with catchy piano accompaniments, and drums that make me dance around in my chair.
 tags: [Music]
+ogImage: /media/posts/album-of-the-day-byrd-in-flight/og-cover.webp
 ---
 <script context="module">
 	import Figure from "$lib/components/components/Figure.svelte"
