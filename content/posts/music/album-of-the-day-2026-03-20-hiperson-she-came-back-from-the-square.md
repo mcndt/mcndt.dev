@@ -33,6 +33,8 @@ Favorite tracks
 
 It’s been nearly six years now since *Bildungsroman* was released. I really hope the band is working on something new. In the meantime, I’ll be passing through Chengdu for a few days on a trip later this year, so I’m hoping to pick up some of their music on vinyl if I can find it!
 
+Check out *Bandwagon.asia*’s [article](https://www.bandwagon.asia/articles/introducing-hiperson-interview-chengdu-rock-band-china-bildungsroman-new-album-tour-damnably-2021) if you want to learn more about the band.
+
 Happy listening,
 
 Max
