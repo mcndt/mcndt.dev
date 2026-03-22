@@ -54,7 +54,29 @@ module.exports = {
 						'--tw-prose-bold': '#000000',
 						'--tw-prose-invert-bold': theme('colors.cream[700]'),
 						'font-size': '1em',
-						'line-height': '1.8',
+						'line-height': '1.6',
+						p: {
+							'margin-top': '1.5em',
+							'margin-bottom': '1.5em'
+						},
+						li: {
+							'margin-top': '0.25em',
+							'margin-bottom': '0.25em'
+						},
+						h2: {
+							'margin-top': '2em',
+							'margin-bottom': '0.75em'
+						},
+						h3: {
+							'margin-top': '1.75em',
+							'margin-bottom': '0.5em'
+						},
+						ul: {
+							'margin-top': '0.75em'
+						},
+						ol: {
+							'margin-top': '0.75em'
+						},
 						a: {
 							'font-weight': 'inherit',
 							'text-decoration': 'none',
