@@ -8,8 +8,8 @@
 	import Dotted from '$lib/components/styling/DottedBg.svelte';
 	import _ from 'lodash';
 	import TagFilter from './components/TagFilter.svelte';
-	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
+	import { browser } from '$app/environment';
 
 	export let data: PageData;
 
@@ -17,8 +17,12 @@
 
 	let tags: string[] = [];
 	let filteredPosts: PostMetadata[] = [];
+	let selectedTag: string = 'All';
 
-	$: selectedTag = $page.url.searchParams.get('tag') || 'All';
+	// Read tag from URL on client-side navigation
+	if (browser) {
+		selectedTag = new URLSearchParams(window.location.search).get('tag') || 'All';
+	}
 
 	$: {
 		const postTags = _(posts)
@@ -36,13 +40,16 @@
 		selectedTag === 'All' ? posts : posts.filter((post) => post.tags.includes(selectedTag));
 
 	function onSelectTag(tag: string) {
-		const url = new URL($page.url);
-		if (tag === 'All') {
-			url.searchParams.delete('tag');
-		} else {
-			url.searchParams.set('tag', tag);
+		selectedTag = tag;
+		if (browser) {
+			const url = new URL(window.location.href);
+			if (tag === 'All') {
+				url.searchParams.delete('tag');
+			} else {
+				url.searchParams.set('tag', tag);
+			}
+			goto(url, { replaceState: true, keepFocus: true, noScroll: true });
 		}
-		goto(url, { replaceState: true, keepFocus: true, noScroll: true });
 	}
 </script>
 
