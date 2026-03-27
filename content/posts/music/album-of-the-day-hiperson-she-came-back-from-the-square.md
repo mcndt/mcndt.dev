@@ -15,7 +15,9 @@ Listen along: [Bandcamp](https://maybemars.bandcamp.com/album/she-came-back-from
 
 Hiperson are a five-piece indie rock band from Chengdu, China.
 
-I first discovered Hiperson through their single *[Strawberries](https://youtu.be/BcN2r_Wg58I?si=ovPO_P9rOF5j8CPg)* (2019), also released as the first track of their [Four Seasons](https://damnably.bandcamp.com/album/hiperson-four-seasons-ep) EP. I don’t recall exactly where I found this song, but my Spotify playlist tells that it must have been in March of 2023.
+I first discovered Hiperson through their single *[Strawberries](https://youtu.be/BcN2r_Wg58I?si=ovPO_P9rOF5j8CPg)* (2019), also released as the first track of their [Four Seasons](https://damnably.bandcamp.com/album/hiperson-four-seasons-ep) EP. I don’t recall exactly where I found this song, but my Spotify playlist tells that it must have been in March of 2023 
+
+(UPDATE: My partner informed me that it was actually Spotify’s AI DJ we discovered this song through, of all places. We were trying out spotify’s uncanny AI radio host during a long car ride, when it suddenly decided to go on a mandopop stint.)
 
 When I first heard Strawberries it was the freshest music I had heard in a long time.
 It opens with a simple, crisp baseline. Later, a male singer, then a female singer join in, alternating. In the background, faint analogue crackling can be heard.
