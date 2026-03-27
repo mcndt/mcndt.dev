@@ -15,12 +15,17 @@ Listen along: [Bandcamp](https://maybemars.bandcamp.com/album/she-came-back-from
 
 Hiperson are a five-piece indie rock band from Chengdu, China.
 
-I first discovered Hiperson through their single *[Strawberries](https://youtu.be/BcN2r_Wg58I?si=ovPO_P9rOF5j8CPg)* (2019), also released as the first track of their [Four Seasons](https://damnably.bandcamp.com/album/hiperson-four-seasons-ep) EP. I don’t recall exactly where I found this song, but my Spotify playlist shows that it must have been in March 2023.
+I first discovered Hiperson through their single *[Strawberries](https://youtu.be/BcN2r_Wg58I?si=ovPO_P9rOF5j8CPg)* (2019), also released as the first track of their [Four Seasons](https://damnably.bandcamp.com/album/hiperson-four-seasons-ep) EP. I don’t recall exactly where I found this song, but my Spotify playlist tells that it must have been in March of 2023.
 
-When I first heard *Strawberries*, it was the freshest music I had heard in a long time.
-	It opens with a simple, crisp bassline. In the background, faint analogue crackling can be heard. After the first two verses, sung in almost angelic tones, an analogue synth breaks in and the song opens up into a catchy pop-rock hit. The song had me hooked immediately— I listened to it on repeat for days. It is one of those rare songs for me that really works well on repeat.
+When I first heard Strawberries it was the freshest music I had heard in a long time.
+It opens with a simple, crisp baseline. Later, a male singer, then a female singer join in, alternating. In the background, faint analogue crackling can be heard.
 
-Shortly after, I started exploring their LP releases [Bildungsroman](https://maybemars.bandcamp.com/album/bildungsroman) (2020) and [No Need For Another History](https://hiperson.bandcamp.com/album/no-need-for-another-history) (2015), both of which I listened to extensively. Today, however, I would like to highlight their second studio album **She Came Back From The Square** (original title: 她从广场回来), released in 2018. Somehow I completely missed that this release existed between the aforementioned two releases and only listened to it for the first time this year.
+After the first two verses sung in almost angelic tones, an analogue synth breaks it down and the song opens up into a fun pop rock hit. The song had me hooked immediately and I listened to it on repeat for days.
+(It is one of those rare songs for me that really work well on repeat!)
+
+*(Segue to this album)*
+
+Short after I started exploring their LP releases, [Bildungsroman](https://maybemars.bandcamp.com/album/bildungsroman) (2020) and [No Need For Another History](https://hiperson.bandcamp.com/album/no-need-for-another-history) (2015), both of which I have listened to extensively.Today, however, I would like to highlight their second studio album **She Came Back From The Square** (original title: 她从广场回来), released in 2018. Somehow I completely missed that this release existed between the aforementioned two releases and only listened to it for the first time this year.
 
 *She Came Back From The Square* is a much more emotionally raw album than its older and younger siblings. The instrumentals are more experimental and expressionist, giving the album a
 more avant-garde feel. I love to listen to this album when I feel emotionally drained or frustrated, its rawness complementing my feelings completely.
