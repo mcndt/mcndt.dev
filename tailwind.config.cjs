@@ -53,6 +53,7 @@ module.exports = {
 						// bold should be in black for light mode, cream 700 for dark mode
 						'--tw-prose-bold': '#000000',
 						'--tw-prose-invert-bold': theme('colors.cream[700]'),
+						'--tw-prose-invert-hr': theme('colors.cream[200]'),
 						'font-size': '1em',
 						'line-height': '1.6',
 						p: {
@@ -98,6 +99,23 @@ module.exports = {
 							code: {
 								background: 'transparent !important'
 							}
+						},
+						'sup a': {
+							'text-decoration': 'none',
+							'font-weight': '500'
+						},
+						'.footnotes': {
+							'font-size': '0.875em',
+							'margin-top': '2em',
+							'border-top': '1px solid',
+							'border-color': 'var(--tw-prose-hr)',
+							'padding-top': '1em'
+						},
+						'.footnotes hr': {
+							display: 'none'
+						},
+						'.footnotes ol': {
+							'margin-top': '0.5em'
 						}
 					}
 				}
