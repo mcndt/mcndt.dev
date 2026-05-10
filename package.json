@@ -47,6 +47,14 @@
 		"vite": "^4.4.2"
 	},
 	"type": "module",
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@sveltejs/kit",
+			"esbuild",
+			"sharp",
+			"svelte-preprocess"
+		]
+	},
 	"dependencies": {
 		"lodash": "^4.17.21",
 		"mdsvex-relative-images": "^1.0.3"
